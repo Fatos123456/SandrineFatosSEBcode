@@ -1,0 +1,31 @@
+body
+{
+    text-align: center;
+    margin-top: 10%;
+}
+
+#connexion
+{
+    display: flex;
+    margin-left: 42%;
+    margin-bottom: 2%;
+}
+
+#mdp
+{
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+
+#compte input
+{
+    font-size: 15px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    
+}

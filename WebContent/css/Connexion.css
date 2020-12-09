@@ -1,0 +1,25 @@
+body
+{
+    text-align: center;
+    margin-top: 10%;
+}
+
+#connexion
+{
+    display: flex;
+    margin-left: 42%;
+    margin-bottom: 2%;
+}
+
+#mdp
+{
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+#compte
+{
+    padding: 3%;
+    font-size: 20px;
+    
+}

@@ -1,11 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Page d'accueil</title>
+<meta charset="utf-8">
+<title>Les objets sont nos amis : Page d'accueil</title>
+
+
+    <!-- Feuille de style -->
+    <link href="css/style.css" rel="stylesheet">
 
 </head>
 <body>
-<h1>page 1/13</h1>
+<p>ENI-Encheres</p>
+
+<a href="https://Connexion.html">s'inscrire - se connecter</a>
+
+<h1 align="center">Liste des enchères</h1>
+
+<form action="">
+
+<!--Champ de recherche par filtres-->
+
+		<label for="Filtres">Filtres</label>
+		<br>
+		<input type="text" name="filtres" id="filtres" placeholder="Le nom de l'article contient...">
+
+
+<!--Liste deroulante des categories-->
+
+		<br><br>
+		<label for="Categorie">Catégorie</label>
+		<select>
+		<option>Toutes
+		<option>Informatique
+		<option>Ameublement
+		<option>Vêtement
+		<option>Sport&Loisirs
+		</select>
+		
+<!--Bouton rechercher-->		
+		<button>
+			Rechercher
+		</button>
+</form>
+
+<!-- liste des encheres filtrées -->
+<ul>
+	<li>Enchere1</li>
+	
+	<table>
+	 <tbody>
+    <tr>
+      <td><img src="images/enchere1.jpg"alt="enchere1"/></td>
+      <td>Description</td><tr>
+      <td>Prix</td><tr>
+      <td>Fin de l'enchère</td><tr>
+      <td>Vendeur</td>
+    </tr>
+	
+	</table>
+
+
+
+
+
+	<li>Enchere2</li>
+	<li>Enchere3</li>
+</ul>
+
+
+
+
+
 </body>
 </html>

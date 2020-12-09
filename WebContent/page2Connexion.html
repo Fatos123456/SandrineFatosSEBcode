@@ -2,9 +2,32 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Page 2 de connexion</title>
+<link rel="stylesheet" type="text/css" href="css/Connexion.css" />
+<title>Les objets sont nos amis</title>
 </head>
 <body>
-<h1>page 2/13</h1>
+	<h1>page2/13</h1>
+
+        <label for="id"> Identifiant :</label> 
+        <input type="text" name="id" id="id"/><br/><br>
+
+        <label for="password"> Mot de Passe :</label>
+        <input type="password" name="password" id="password"/> <br/><br>
+
+        <div id="connexion">
+            <input type="button" value="Connexion">
+            
+            <div id="mdp">
+                <input type="checkbox" name="souvenir" value="souvenir" id="souvenir"/> 
+                            <label for="souvenir" class="choicelabel"> Se souvenir de moi </label><br/>
+
+                <a href=""> Mot de passe oublié </a> <br/><br> 
+            </div>     
+
+        </div>
+
+        <div id="compte">
+        <input type="button" value="Créer un compte">
+        </div>
 </body>
 </html>

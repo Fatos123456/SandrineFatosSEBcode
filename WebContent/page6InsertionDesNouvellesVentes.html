@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="css/insertionDesArticles.css" />
 <meta charset="ISO-8859-1">
 <!-- Page 6 insertion des nouvelles ventes -->
 <title>Nouvelle Vente</title>
@@ -11,14 +12,18 @@
 
 <!-- titre de de la page-->
 <h2>Nouvelle vente</h2>
-<img alt="L'image de l'article de la nouvelle vente" src="cela se fera avec upload" placeholder="uploader une image ">
+<div><img alt="L'image de l'article de la nouvelle vente" 
+src="cela se fera avec upload" placeholder="uploader une image ">
+
+<div id="label">
 <!--  le formulaire de nouvelle vente -->
 <form action="EnregistrerOuAnnulerLaVente">
-<label>Article :</label>
-<input type="text" name="article" placeholder="Fauteuil..."></br>
-<label>Description :</label>
-<textarea rows="4" cols="40" placeholder="Fauteil en cuir..."></textarea></br>
-<label>Catégorie</label>
+<div id=label>
+<label>Article : <input type="text" name="article" placeholder="Fauteuil..."></label>
+
+<label>Description :  <textarea rows="4" cols="40" placeholder="Fauteil en cuir..."></textarea></label>
+
+<label>Catégorie
 
 <!-- Liste déroulante -->
 <select name="categorie">
@@ -27,32 +32,33 @@
 	<option>Ameublement</option>
 	<option>Vêtement</option>
 	<option>Sport&Loisirs</option>
-</select></br>
-<label>Photo de l'article </label>
-<input type="file"/></br>
+</select></label>
+<label>Photo de l'article 
+<input type="file"/></label>
 <label>Mise à prix :</label>
-<input type="number" placeholder="310"></br>
+<input type="number" placeholder="310">
 <label>Début de l'enchère : </label>
-<input type="date" placeholder="10/08/2020"></br>
+<input type="date" placeholder="10/08/2020">
 <label>Fin de l'enchère : </label>
-<input type="date"placeholder="01/09/2020"></br>
+<input type="date"placeholder="01/09/2020">
 <!-- Retrait est une bordure pour toute la partie adresse
 Par défaut L'adresse est automatiquement celle du vendeur -->
 <label>Retrait : </label>
 <label>Rue :</label>
-<input type="text" name="rue" ></br>
+<input type="text" name="rue" >
 <label>Code postal :</label>
-<input type="text" name="codepostal" ></br>
+<input type="text" name="codepostal" >
 <label>Ville :</label>
-<input type="text" name="ville" ></br>
-
-</form>
+<input type="text" name="ville" >
 <button>Enregistrer</button>
 <button>Annuler</button>
 
 <!-- La vente peut etre annule seulement si   -->
 <button>Annuler La vente</button>
-
+</div>
+</form>
+</div>
+</div>
 
 </body>
 

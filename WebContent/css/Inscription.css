@@ -6,11 +6,15 @@ body
 h1
 {
     margin-bottom: 5%;
+    text-align: center;
+
 }
+
 #infos_compte
 {
     display: flex;
     margin-left: 30%;
+    margin-top: 5%;
     text-align: left;
 }
 
@@ -18,26 +22,26 @@ h1
 {
     margin-right: 10%;
 }
-footer
-{
-    text-align: center;
-    margin-top: 5%;
-}
-footer input
-{
-    font-size: 15px;
-    padding: 1%;
-    margin-left: 3%;
-    margin-right: 3%;
-}
 
-button
+
+#creer
 {
     font-size: 15px;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
     padding-top: 1%;
     padding-bottom: 1%;
-    margin-left: 2%;
-    margin-right: 2%;
+}
+
+#annuler
+{
+    margin-right: 5%;
+    margin-top: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }

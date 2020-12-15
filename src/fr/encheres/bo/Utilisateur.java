@@ -304,11 +304,6 @@ public class Utilisateur {
 				+ ville + ", motDePasse=" + motDePasse + ", credit=" + credit + ", administrateur=" + administrateur
 				+ ", article=" + article + ", enchere=" + enchere + "]";
 	}
-
-
-
-
-	
 	
 
 }

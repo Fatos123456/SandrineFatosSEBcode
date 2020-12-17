@@ -30,7 +30,7 @@ import fr.encheres.bo.Utilisateur;
  * author Fatos
  * Servlet implementation class ServletAfficherProfil
  */
-@WebServlet("/ServletAfficherProfil")
+@WebServlet("/SandrineFatosSEBcod/ServletAfficherProfil")
 public class ServletAfficherProfil extends HttpServlet {
     private static final long serialVersionUID = 1L;
 //    private Utilisateur utilisateur = new Utilisateur();

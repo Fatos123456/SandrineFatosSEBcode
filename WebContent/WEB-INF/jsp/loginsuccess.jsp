@@ -19,10 +19,10 @@
 <body>
 <div id="seconnecter">
     <p>ENI-Encheres</p>
-    <a href="/SandrineFatosSEBcode/ServletEncheres">Encheres</a>
-    <a href="/SandrineFatosSEBcode/ServletVendreArticle">Vendre un article</a>
-      <a href="/SandrineFatosSEBcode/ServletAfficherProfil">Mon profil</a>
-    <a href="/SandrineFatosSEBcode/ServletAccueil">se deconnecter</a>
+    <a href="/ServletEncheres">Encheres</a>
+    <a href="/ServletVendreArticle">Vendre un article</a>
+      <a href="/ServletAfficherProfil">Mon profil</a>
+    <a href="/ServletAccueil">se deconnecter</a>
   
 </div>
 

@@ -19,7 +19,7 @@
 <body>
 <div id="seconnecter">
     <p>ENI-Encheres</p>
-    <a href="/SandrineFatosSEBcode/ServletConnexionMonCompte">s'inscrire - se
+    <a href="ServletConnexionMonCompte">s'inscrire - se
 			connecter</a>
 
  

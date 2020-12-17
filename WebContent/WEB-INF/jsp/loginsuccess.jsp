@@ -19,11 +19,11 @@
 <body>
 <div id="seconnecter">
     <p>ENI-Encheres</p>
-    <a href="/SandrineFatosSEBcode/ServletConnexionMonCompte">s'inscrire - se
-			connecter</a>
-
- 
-
+    <a href="/SandrineFatosSEBcode/ServletEncheres">Encheres</a>
+    <a href="/SandrineFatosSEBcode/ServletVendreArticle">Vendre un article</a>
+      <a href="/SandrineFatosSEBcode/ServletAfficherProfil">Mon profil</a>
+    <a href="/SandrineFatosSEBcode/ServletAccueil">se deconnecter</a>
+  
 </div>
 
  
@@ -81,7 +81,7 @@
  
 
         
-<form action="<%=request.getContextPath()%>/ServletAccueil" method = "post">
+<form action="<%=request.getContextPath()%>/listerEncheres" method = "post">
         <!--Bouton rechercher-->        
         
         <div class="rechercher">

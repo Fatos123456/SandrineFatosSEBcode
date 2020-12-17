@@ -57,7 +57,7 @@ public class ServletConnexionMonCompte extends HttpServlet {
 	                session.setAttribute("motDePasse", motDePasse);
 	                session.setMaxInactiveInterval(3600);
 	                
-	                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/AccueilMonCompte1.jsp");
+	                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/loginsuccess.jsp");
 	                rd.forward(request,response);
 	            
 	            } catch (Exception e) {

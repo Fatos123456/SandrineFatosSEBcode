@@ -4,8 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import fr.encheres.BusinessException;
 import fr.encheres.bo.Utilisateur;
+import fr.encheres.dal.CodesResultatDAL;
 
 
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
@@ -15,7 +19,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	private static final String CONNEXION = "select no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville from utilisateurs where (pseudo=?) AND (mot_de_passe=?)";
 	
-	private static final String SELECT_ALL = "SELECT*FROM UTILISATEURS where no_utilisateur=?";
+	
 	
 	public void creer(Utilisateur utilisateur) {
 	
@@ -93,43 +97,92 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	}
 
 
+	// on crée la requete de modification de l'utilisateur
+		private static final String MODIFIER_UTILISATEUR = "UPDATE UTILISATEURS SET pseudo=?, nom=?, prenom=?, email=?, telephone=?, rue=?, code_postal=?, ville=?, mot_de_passe=?, administrateur=? WHERE no_utilisateur=4";
+
+		public void modifier(Utilisateur utilisateur) {
+
+			try (Connection cnx = ConnectionProvider.getConnection()) {
+				try {
+
+					PreparedStatement pstmt = cnx.prepareStatement(MODIFIER_UTILISATEUR,
+							PreparedStatement.RETURN_GENERATED_KEYS);
+					pstmt.setString(1, utilisateur.getPseudo());
+					pstmt.setString(2, utilisateur.getNom());
+					pstmt.setString(3, utilisateur.getPrenom());
+					pstmt.setString(4, utilisateur.getEmail());
+					pstmt.setString(5, utilisateur.getTelephone());
+					pstmt.setString(6, utilisateur.getRue());
+					pstmt.setString(7, utilisateur.getCodePostal());
+					pstmt.setString(8, utilisateur.getVille());
+					pstmt.setString(9, utilisateur.getMotDePasse());
+					pstmt.setInt(10, utilisateur.getAdministrateur());
+	//pstmt.setInt(11, utilisateur.getId() );
+
+					pstmt.executeUpdate();
+					ResultSet rs = pstmt.getGeneratedKeys();
+					if (rs.next()) {
+						utilisateur.setId(rs.getInt(1));
+					}
+					rs.close();
+					pstmt.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+		}
+
+	//on crée la requete de selectionner un utilisateur
+
+		private static final String SELECT_UILISATEUR = "SELECT*FROM UTILISATEURS where no_utilisateur=4";
+
+		@Override
+		public List<Utilisateur> select() throws BusinessException {
+			List<Utilisateur> utilisateur = new ArrayList<Utilisateur>();
+			try (Connection cnx = ConnectionProvider.getConnection()) {
+				PreparedStatement pstmt = cnx.prepareStatement(SELECT_UILISATEUR);
+
+				ResultSet rs = pstmt.executeQuery();
+				while (rs.next()) {
+					Utilisateur lesUtilisateurs = new Utilisateur();
+
+					lesUtilisateurs = utilisateurBuilder(rs);
+					utilisateur.add(lesUtilisateurs);
+
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+				BusinessException businessException = new BusinessException();
+				businessException.ajouterErreur(CodesResultatDAL.LECTURE_UTILISATEUR_ECHEC);
+				throw businessException;
+			}
+			return utilisateur;
+		}
+
+		private Utilisateur utilisateurBuilder(ResultSet rs) throws SQLException {
+			Utilisateur lesUtilisateurs;
+			lesUtilisateurs = new Utilisateur();
+			lesUtilisateurs.setPseudo(rs.getString("pseudo"));
+			lesUtilisateurs.setNom(rs.getString("nom"));
+			lesUtilisateurs.setPrenom(rs.getString("prenom"));
+			lesUtilisateurs.setEmail(rs.getString("email"));
+			lesUtilisateurs.setTelephone(rs.getString("telephone"));
+			lesUtilisateurs.setRue(rs.getString("rue"));
+			lesUtilisateurs.setCodePostal(rs.getString("code_postal"));
+			lesUtilisateurs.setVille(rs.getString("ville"));
+			lesUtilisateurs.setMotDePasse(rs.getString("mot_de_passe"));
+			lesUtilisateurs.setCredit(rs.getInt("credit"));
+			lesUtilisateurs.setAdministrateur(rs.getInt("administrateur"));
+			return lesUtilisateurs;
+		}
 
 	 
 
-    @Override
-    public Utilisateur select(int id) throws Exception {
-        Utilisateur utilisateur = new Utilisateur();
-        try(
-                Connection cnx = ConnectionProvider.getConnection())
-        {
-            PreparedStatement pstmt = cnx.prepareStatement(SELECT_ALL);
-            pstmt.setInt(1, id);
-            ResultSet rs = pstmt.executeQuery();
-            while(rs.next())
-            {
-            
-        
-            utilisateur.setId(rs.getInt("id"));
-            utilisateur.setPseudo(rs.getString("pseudo"));
-            utilisateur.setNom(rs.getString("nom"));
-            utilisateur.setPrenom(rs.getString("prenom"));
-            utilisateur.setEmail(rs.getString("email"));
-            utilisateur.setTelephone(rs.getString("telephone"));
-            utilisateur.setRue(rs.getString("rue"));
-            utilisateur.setCodePostal(rs.getString("code_postal"));
-            utilisateur.setVille(rs.getString("ville"));
-            utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
-            utilisateur.setCredit(rs.getInt("credit"));
-            utilisateur.setAdministrateur(rs.getInt("administrateur"));
-            
-        }}
-        catch(SQLException e)
-        {
-            e.printStackTrace();
-            Exception Exception = new Exception();
-            throw Exception;
-        }
-            return utilisateur;
-    }
+   
 	
 }

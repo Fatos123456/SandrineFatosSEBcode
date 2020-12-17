@@ -11,4 +11,8 @@ public abstract class DAOFactory {
 	public static UtilisateurDAO getUtilisateurDAOJdbcImpl() {
 		return new UtilisateurDAOJdbcImpl();
 	}
+	
+	  public static EnchereDAO getEnchereDAO() {
+	        return new EnchereDAOJdbcImpl();
+	    }
 }

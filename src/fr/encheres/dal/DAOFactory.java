@@ -16,3 +16,4 @@ public abstract class DAOFactory {
 	        return new EnchereDAOJdbcImpl();
 	    }
 }
+

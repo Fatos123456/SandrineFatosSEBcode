@@ -62,11 +62,11 @@
         </div>
         
  
-			<a href="">        
-	        <button id="creer" type="button" class="btn btn-success">Créer</button>	
+			<a href="<%=request.getContextPath()%>/ServletAccueilMonCompte1">        
+	        <button id="creer" type="submit" class="btn btn-success">Créer</button>	
 	        </a>
               
-            <a href="page1Accueil.html">
+            <a href="<%=request.getContextPath()%>/ServletAccueil">
 	        <button id="annuler" type="button" class="btn btn-primary">Annuler</button> 
 	        </a>
       
@@ -77,15 +77,10 @@
 		{
 		%>
 				<p style="color:green;">Le compte a été créé avec succès !</p>
-				<p><%=utilisateur %></p>
 		<%	
-		} else
-		{
+		} 	
 		%>	
-			<p style="color:red;">Le compte n'a pas été créé !</p>
-		<%	
-		}
-      	%>
+		
       
 </body>
 </html>

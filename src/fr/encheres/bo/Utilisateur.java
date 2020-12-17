@@ -83,6 +83,45 @@ public class Utilisateur {
 	}
 
 	
+
+
+	/**
+	 * @param id
+	 * Identifiant de l'utilisateur
+	 * @param pseudo
+	 * Pseudo de l'utilisateur
+	 * @param nom
+	 * Nom de l'utilisateur
+	 * @param prenom
+	 * Prénom de l'utilisateur
+	 * @param email
+	 * Email de l'utilisateur
+	 * @param telephone
+	 * Téléphone de l'utilisateur
+	 * @param rue
+	 * Nom de rue de l'utilisateur
+	 * @param codePostal
+	 * Code postal de l'utilisateur
+	 * @param ville
+	 * Ville de l'utilisateur
+	 * @param motDePasse
+	 * Mot de passe de l'utilisateur
+	 */
+	public Utilisateur(int id, String pseudo, String nom, String prenom, String email, String telephone, String rue,
+			String codePostal, String ville, String motDePasse) {
+		this.id = id;
+		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.rue = rue;
+		this.codePostal = codePostal;
+		this.ville = ville;
+		this.motDePasse = motDePasse;
+	}
+
+
 	
 	/**
 	 * @return the id

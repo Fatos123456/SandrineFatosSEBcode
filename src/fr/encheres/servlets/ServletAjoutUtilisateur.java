@@ -1,7 +1,7 @@
 package fr.encheres.servlets;
 
 import java.io.IOException;
-
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,6 +37,7 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		PrintWriter out = response.getWriter();
 		request.setCharacterEncoding("UTF-8");
 		
 		String pseudo = null;
@@ -48,8 +49,7 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 		String codePostal = null;
 		String ville = null;
 		String motDePasse = null;
-//		int credit = 0;
-
+		int credit = 0;
 					
 		try {
 			
@@ -66,9 +66,14 @@ public class ServletAjoutUtilisateur extends HttpServlet {
 			Utilisateur utilisateur = utilisateurManager.creer(pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse);
 			request.setAttribute("utilisateur", utilisateur);
 			
-//			if(utilisateur != null) {
-//				credit += 10;
-//			}
+			
+			if(utilisateur != null) {			
+				out.print("Le compte a été créé avec succès !");
+				credit += 10;
+				
+			}else if(utilisateur == null) {
+				out.print("Le compte n'a pas été créé !");
+			}
 							
 			
 		} catch (Exception e) {

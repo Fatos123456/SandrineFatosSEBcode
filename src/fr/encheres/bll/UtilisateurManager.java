@@ -1,5 +1,6 @@
 package fr.encheres.bll;
 
+
 import fr.encheres.bo.Utilisateur;
 import fr.encheres.dal.DAOFactory;
 import fr.encheres.dal.UtilisateurDAO;
@@ -36,5 +37,24 @@ public class UtilisateurManager extends Utilisateur {
 			
 			return utilisateur;
 		}
+
+
+		public Utilisateur connexion(String pseudo, String motDePasse) {
+
+			Utilisateur utilisateur = null;
+			try {
+				utilisateur = utilisateurDAO.connexion(pseudo, motDePasse);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return utilisateur;
+		}
 	
+		
+		public Utilisateur select(int id) throws Exception{
+			   
+	        return DAOFactory.getUtilisateurDAOJdbcImpl().select(id);
+	    }
+	
+		
 }

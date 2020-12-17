@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form method="post" action="${pageContext.request.contextPath}/ServletConnexion">
+<form method="post" action="${pageContext.request.contextPath}/ServletConnexionMonCompte">
 
 		<label for="username"> Identifiant :</label> 
         <input type="text" name="username" id="username"/><br/><br>

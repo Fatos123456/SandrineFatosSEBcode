@@ -11,22 +11,12 @@ body
     margin-bottom: 2%;
 }
 
-button
-{
-    font-size: 15px;
-    margin-top: 30%;
-    margin-right: 10%;
-    padding-right: 20%;
-    padding-left: 20%;
-    padding-top: 10%;
-    padding-bottom: 10%;
-}
-
 #mdp
 {
-    margin-left: 55%;
+    margin-left: 2%;
     margin-top: 1%;
 }
+
 
 #compte input
 {

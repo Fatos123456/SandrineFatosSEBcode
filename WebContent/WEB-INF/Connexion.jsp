@@ -26,11 +26,12 @@
 
 	
         <div id="connexion">     
+        <div>
             <a href="<%=request.getContextPath()%>/AccueilMonCompte1">
             <button type="submit"> Connexion </button> 
             </a>
                
-           
+           </div>
             <div id="souvenirdemoi">
                 <input type="checkbox" name="souvenirdemoi" value="souvenirdemoi" id="souvenirdemoi"/> 
                             <label for="souvenirdemoi" class="choicelabel"> Se souvenir de moi </label><br/><br>
